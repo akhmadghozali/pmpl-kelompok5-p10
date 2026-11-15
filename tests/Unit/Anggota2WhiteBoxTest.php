@@ -2,15 +2,11 @@
 
 namespace Tests\Unit;
 
-use App\Support\ShopRules;
 use PHPUnit\Framework\TestCase;
+use App\Support\ShopRules;
 
-class Anggota2WhiteBoxTest extends TestCase
-{
-    public function test_anggota_2_white_box(): void
-    {
-        // Kasus: tepat di bawah batas Rp100000; Input: 99999, false
-        $this->markTestIncomplete('Isi pemanggilan fungsi dan assertion TC10-02, lalu hapus baris ini.');
-        // TODO: Tulis 2-4 baris kode di bawah sesuai petunjuk Jobsheet 10.
+final class Anggota2WhiteBoxTest extends TestCase {
+    public function test_diskon_non_member_di_atas_ambang(): void {
+        $this->assertSame(7500, ShopRules::discount(150000, false));
     }
 }
